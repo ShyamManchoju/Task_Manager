@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <title><%= title%></title>
+        </head>
+    <body>
+        
+        <div class="container">
+                <% include ../shared/header %>
+
+            <div>
+                <a href="/login/logout" class="btn btn-danger">Logout</a>
+            </div>
+           
+            <div class="row">
+                <div class="col col-md-6">
+                    <form action="/tasks/create" method="post">
+                        <div class="form-group">
+                            <label for="task" class="col-form-label">Add Task</label>
+                            <input class="form-control" type="text" id="task" name="task">
+                            <div class="invalid-feedback">Task can't be blank.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-6">
+                    <ul class="list-group">
+                        <% task.forEach(function(item){ %>
+                            <li class="list-group-item">
+                                    <strong>Task -</strong> <%= item.title %>
+                                    <a href="/tasks/<%=item.id%>" class="btn btn-info float-right">&gt;</a>
+                                    <a href="/tasks/delete/<%=item.id%>" class="btn btn-danger float-right">x</a>
+        
+                            </li>
+                       <% }) %>
+                        
+                    </ul>
+                </div>
+            </div>
+            <% include ../shared/footer %>
+        </div>
+    </body>
+</html>

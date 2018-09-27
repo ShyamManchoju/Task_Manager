@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>
+       Task Title
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <% include ../shared/header %>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+
+                        <h1>
+                            Task Title
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>
+                                Title : <%= task.title%>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                Completed : <%= task.completed%> 
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                Date : <%= task.date%>
+
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% include ../shared/footer %>
+</body>
+
+</html>

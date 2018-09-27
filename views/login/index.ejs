@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <title>Login</title>
+        </head>
+    <body>
+        
+        <div class="container">
+            <% include ../shared/header %>
+           <div  class="row">
+               <div class="col col-md-4">
+                    <% if(errMsg){ %>
+                        <div class="alert alert-danger">
+                            <strong><%= errMsg %></strong> 
+                        </div> 
+                    <% } %>
+                    
+                   <form  action="/login" method="post">
+                       <div class="form-group">
+                           <label for="userName" class="col-form-label">UserName</label>
+                            <input type="text" id="userName" name="userName" class="form-control">
+                            <span class="invalid-feedback" >UserName can't be blank.</span>
+                       </div>
+                       <div class="form-group">
+                            <label for="password" class="col-form-label">Password</label>
+                             <input type="password" id="password" name="password" class="form-control">
+                             <span class="invalid-feedback" >Password can't be blank.</span>
+                        </div>
+                        <button class="btn btn-primary">Login</button>
+                   </form>
+               </div>
+           </div>
+          
+            <% include ../shared/footer %>
+        </div>
+    </body>
+</html>
