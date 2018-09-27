@@ -6,9 +6,11 @@ const session = require('cookie-session');
 const taskRoutes = require('./routes/taskRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 
-const PORT = 5000;
+//const PORT = 5000;
 
 //view engine setup
 app.set('views',path.join(__dirname, 'views'));
